@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack | Add Application</title>
+
+    <!-- Keep the existing dashboard stylesheet unchanged -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/add-application.css">
+
+    <script src="js/auth.js"></script>
+    <script>
+        requireLogin();
+    </script>
+</head>
+
+<body class="add-application-page">
+
+    <div class="add-app-layout">
+
+        <!-- Sidebar -->
+        <aside class="add-app-sidebar">
+            <div class="add-app-sidebar-image">
+                <img src="assets/job track logo.jpeg"
+                     alt="Job search illustration">
+            </div>
+
+            <nav class="add-app-nav">
+                <a href="dashboard.html">🏠 Dashboard</a>
+                <a href="my-application.html">📋 My Applications</a>
+                <a href="interviews.html">
+                    📅 Interviews & Follow-ups
+                </a>
+                <a href="dashboard.html#statistics">📊 Statistics</a>
+                <a href="admin.html">🛡️ Admin</a>
+            </nav>
+
+            <div class="sidebar-bottom-image">
+            <img src="assets/sidebar-image.jpeg" alt="JobTrack illustration">
+            </div>
+
+            <p class="add-app-sidebar-note">
+                Every application is a step towards your dream career.
+            </p>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="add-app-main">
+
+            <header class="add-app-header">
+                <div>
+                    <p class="add-app-eyebrow">YOUR CAREER, ORGANIZED</p>
+                    <h1>Add New Application</h1>
+                    <p>Keep all your job opportunities in one place.</p>
+                </div>
+
+                <button type="button" id="logoutBtn"
+                        class="add-app-logout">
+                    Logout ↗
+                </button>
+            </header>
+
+            <!-- Page banner with image -->
+            <section class="add-app-banner">
+                <div>
+                    <h2>One step closer to your dream job! ✨</h2>
+                    <p>
+                        Record your application details today.
+                        Stay organized and never miss an opportunity.
+                    </p>
+                </div>
+
+                <img src="assets/my-application.jpeg"
+                     alt="Organize your job applications">
+            </section>
+
+            <!-- Application Form -->
+            <section class="add-app-card">
+
+                <div class="add-app-section-heading">
+                    <div>
+                        <h2>Application Details</h2>
+                        <p>
+                            Fill in the information below to save a job.
+                            Fields marked * are required.
+                        </p>
+                    </div>
+                </div>
+
+                <form id="applicationForm">
+
+                    <div class="add-app-form-grid">
+
+                        <div class="add-app-field">
+                            <label for="companyName">Company Name *</label>
+                            <input type="text" id="companyName"
+                                   name="companyName"
+                                   placeholder="e.g. Google"
+                                   maxlength="100" required>
+                        </div>
+
+                        <div class="add-app-field">
+                            <label for="position">Job Position *</label>
+                            <input type="text" id="position"
+                                   name="position"
+                                   placeholder="e.g. Software Developer"
+                                   maxlength="100" required>
+                        </div>
+
+                        <div class="add-app-field">
+                            <label for="location">Job Location</label>
+                            <input type="text" id="location"
+                                   name="location"
+                                   placeholder="e.g. Hyderabad / Remote"
+                                   maxlength="100">
+                        </div>
+
+                        <div class="add-app-field">
+                            <label for="jobType">Job Type</label>
+                            <select id="jobType" name="jobType">
+                                <option value="">Select job type</option>
+                                <option value="Full-time">Full-time</option>
+                                <option value="Part-time">Part-time</option>
+                                <option value="Internship">Internship</option>
+                                <option value="Contract">Contract</option>
+                                <option value="Remote">Remote</option>
+                            </select>
+                        </div>
+
+                        <div class="add-app-field">
+                            <label for="appliedDate">Application Date *</label>
+                            <input type="date" id="appliedDate"
+                                   name="appliedDate" required>
+                        </div>
+
+                        <div class="add-app-field">
+                            <label for="status">Application Status *</label>
+                            <select id="status" name="status" required>
+                                <option value="Applied">Applied</option>
+                                <option value="Interview">Interview</option>
+                                <option value="Offer">Offer</option>
+                                <option value="Rejected">Rejected</option>
+                            </select>
+                        </div>
+
+                        <div class="add-app-field">
+                            <label for="interviewDate">Interview Date</label>
+                            <input type="date" id="interviewDate"
+                                   name="interviewDate">
+                        </div>
+
+                        <div class="add-app-field">
+                            <label for="followUpDate">Follow-up Date</label>
+                            <input type="date" id="followUpDate"
+                                   name="followUpDate">
+                        </div>
+
+                        <div class="add-app-field full-width">
+                            <label for="jobUrl">Job Posting URL</label>
+                            <input type="url" id="jobUrl" name="jobUrl"
+                                   placeholder="https://example.com/job"
+                                   maxlength="1000">
+                        </div>
+
+                        <div class="add-app-field full-width">
+                            <label for="description">Job Description / Notes</label>
+                            <textarea id="description" name="description"
+                                      rows="4" maxlength="3000"
+                                      placeholder="Add important details, skills, or notes about this opportunity..."></textarea>
+                        </div>
+
+                    </div>
+
+                    <div id="formMessage" class="add-app-message"
+                         role="status" aria-live="polite"></div>
+
+                    <div class="add-app-form-actions">
+                        <button type="reset" class="add-app-reset">
+                            Reset Form
+                        </button>
+
+                        <a href="dashboard.html"
+                           class="add-app-cancel">
+                            Cancel
+                        </a>
+
+                        <button type="submit" class="add-app-submit">
+                            Save Application →
+                        </button>
+                    </div>
+
+                </form>
+            </section>
+
+            <footer class="add-app-footer">
+                JobTrack © 2026 | Organize your career journey.
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="js/add-application.js"></script>
+
+</body>
+</html>

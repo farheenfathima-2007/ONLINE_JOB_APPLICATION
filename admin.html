@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack | Admin</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+
+    <script src="js/auth.js"></script>
+    <script>
+        requireLogin();
+    </script>
+</head>
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <img src="assets/job track logo.jpeg" alt="JobTrack Logo">
+            </div>
+
+            <nav class="admin-nav">
+                <a href="dashboard.html">🏠 Dashboard</a>
+                <a href="my-application.html">📋 My Applications</a>
+                <a href="interviews.html">📅 Interviews & Follow-ups</a>
+                <a href="statistics.html">📊 Statistics</a>
+                <a href="profile.html">👤 Profile</a>
+                <a href="admin.html" class="active">🛡️ Admin</a>
+            </nav>
+
+            <div class="sidebar-bottom-image">
+    <img src="assets/sidebar-image.jpeg" alt="JobTrack illustration">
+</div>
+
+            <button id="adminLogoutBtn" class="admin-logout">
+                Logout
+            </button>
+        </aside>
+
+        <main class="admin-main">
+
+            <header class="admin-header">
+                <p class="admin-eyebrow">ADMINISTRATION</p>
+                <h1>Admin Dashboard</h1>
+                <p>View registered users and monitor JobTrack application activity.</p>
+            </header>
+
+            <section class="admin-stats">
+
+                <article class="admin-stat-card">
+                    <span>Total Registered Users</span>
+                    <h2 id="totalUsers">0</h2>
+                </article>
+
+                <article class="admin-stat-card">
+                    <span>Total Job Applications</span>
+                    <h2 id="totalApplications">0</h2>
+                </article>
+
+                <article class="admin-stat-card">
+                    <span>Users with Applications</span>
+                    <h2 id="activeUsers">0</h2>
+                </article>
+
+            </section>
+
+            <section class="admin-section">
+                <div class="admin-section-heading">
+                    <div>
+                        <h2>Registered Users</h2>
+                        <p>Users registered in this browser's Local Storage.</p>
+                    </div>
+
+                    <input
+                        type="search"
+                        id="userSearch"
+                        placeholder="Search by name or email..."
+                        aria-label="Search registered users"
+                    >
+                </div>
+
+                <div class="admin-table-wrapper">
+                    <table class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Applications</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="usersTableBody">
+                            <tr>
+                                <td colspan="3">Loading users...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p id="adminMessage" class="admin-message" aria-live="polite"></p>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>

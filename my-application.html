@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack | My Applications</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/my-application.css">
+
+    <script src="js/auth.js"></script>
+    <script>
+        requireLogin();
+    </script>
+</head>
+
+<body class="my-applications-page">
+
+    <div class="my-app-layout">
+
+        <!-- Sidebar -->
+        <aside class="my-app-sidebar">
+
+
+            <div class="my-app-sidebar-image">
+                <img src="assets/job track logo.jpeg"
+                     alt="Job application tracking illustration">
+            </div>
+
+            <nav class="my-app-nav">
+                <a href="dashboard.html">🏠 Dashboard</a>
+                <a href="my-application.html" class="active">
+                    📋 My Applications
+                </a>
+                <a href="interviews.html">
+                    📅 Interviews & Follow-ups
+                </a>
+                 <a href="profile.html">👤 My Profile</a>
+                <a href="statistics.html">📊 Statistics</a>
+                <a href="admin.html">🛡️ Admin</a>
+            </nav>
+
+            <div class="sidebar-bottom-image">
+    <img src="assets/sidebar-image.jpeg" alt="JobTrack illustration">
+</div>
+
+            <p class="my-app-sidebar-note">
+                Every opportunity matters. Keep your career organized.
+            </p>
+        </aside>
+
+        <!-- Main content -->
+        <main class="my-app-main">
+
+            <header class="my-app-header">
+                <div>
+                    <p class="my-app-eyebrow">YOUR CAREER, ORGANIZED</p>
+                    <h1>My Applications</h1>
+                    <p>Manage and track all your job opportunities.</p>
+                </div>
+
+                <div class="my-app-header-actions">
+                    <a href="add-application.html" class="my-app-add-btn">
+                        + Add Application
+                    </a>
+
+                    <button id="logoutBtn" class="my-app-logout">
+                        Logout ↗
+                    </button>
+                </div>
+            </header>
+
+            <!-- Banner -->
+            <section class="my-app-banner">
+                <div>
+                    <h2>Your job search, all in one place. ✨</h2>
+                    <p>
+                        Review your applications, update their status,
+                        and keep track of your next career opportunity.
+                    </p>
+                </div>
+
+                <img src="assets/add-application.jpeg"
+                     alt="Organized job search">
+            </section>
+
+
+            <!-- Application list -->
+            <section class="my-app-card">
+
+                <div class="my-app-section-heading">
+                    <div>
+                        <h2>All Applications</h2>
+                        <p id="resultsText">
+                            Your saved job applications will appear here.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Search and filter -->
+                <div class="my-app-controls">
+
+                    <input type="search"
+                           id="searchInput"
+                           placeholder="🔍 Search company or position..."
+                           aria-label="Search applications">
+
+                    <select id="statusFilter"
+                            aria-label="Filter by application status">
+                        <option value="All">All Statuses</option>
+                        <option value="Applied">Applied</option>
+                        <option value="Interview">Interview</option>
+                        <option value="Offer">Offer</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+
+                </div>
+
+                <div id="emptyState" class="my-app-empty" hidden>
+                    <img src="assets/dashboard.jpeg"
+                         alt="Job application illustration">
+
+                    <h3 id="emptyTitle">No applications yet</h3>
+
+                    <p id="emptyDescription">
+                        Add your first job application to get started.
+                    </p>
+
+                    <a href="add-application.html" class="my-app-add-btn">
+                        + Add Application
+                    </a>
+                </div>
+
+                <div class="my-app-table-wrapper" id="tableWrapper">
+                    <table class="my-app-table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Position</th>
+                                <th>Applied Date</th>
+                                <th>Status</th>
+                                <th>Interview</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="applicationsTableBody"></tbody>
+                    </table>
+                </div>
+
+                <p id="pageMessage" class="my-app-message"
+                   role="status" aria-live="polite"></p>
+
+            </section>
+
+            <footer class="my-app-footer">
+                JobTrack © 2026 | Organize your career journey.
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Edit application dialog -->
+    <dialog id="editDialog" class="my-app-dialog">
+
+        <form id="editForm">
+            <h2>Edit Application</h2>
+            <p>Update the details of your saved application.</p>
+
+            <input type="hidden" id="editId">
+
+            <label for="editCompany">Company Name *</label>
+            <input type="text" id="editCompany" maxlength="100" required>
+
+            <label for="editPosition">Job Position *</label>
+            <input type="text" id="editPosition" maxlength="100" required>
+
+            <label for="editAppliedDate">Application Date *</label>
+            <input type="date" id="editAppliedDate" required>
+
+            <label for="editStatus">Application Status *</label>
+            <select id="editStatus" required>
+                <option value="Applied">Applied</option>
+                <option value="Interview">Interview</option>
+                <option value="Offer">Offer</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+
+            <label for="editInterviewDate">Interview Date</label>
+            <input type="date" id="editInterviewDate">
+
+            <label for="editFollowUpDate">Follow-up Date</label>
+            <input type="date" id="editFollowUpDate">
+
+            <div class="my-app-dialog-actions">
+                <button type="button" id="cancelEdit"
+                        class="my-app-cancel-btn">
+                    Cancel
+                </button>
+
+                <button type="submit" class="my-app-add-btn">
+                    Save Changes
+                </button>
+            </div>
+        </form>
+
+    </dialog>
+
+    <script src="js/my-application.js"></script>
+
+</body>
+</html>

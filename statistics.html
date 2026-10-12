@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobTrack | Statistics</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/statistics.css">
+
+    <script src="js/auth.js"></script>
+    <script>
+        requireLogin();
+    </script>
+
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-image">
+                <img src="assets/job track logo.jpeg" alt="JobTrack Logo">
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">🏠 Dashboard</a>
+                <a href="my-application.html">📋 My Applications</a>
+                <a href="interviews.html">📅 Interviews & Follow-ups</a>
+                <a href="statistics.html" class="active">📊 Statistics</a>
+                <a href="profile.html">👤 Profile</a>
+                <a href="admin.html">🛡️ Admin</a>
+            </nav>
+
+                <div class="sidebar-bottom-image">
+    <img src="assets/sidebar-image.jpeg" alt="JobTrack illustration">
+</div>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="statistics-main">
+
+            <header class="statistics-header">
+                <div>
+                    <p class="statistics-eyebrow">YOUR CAREER AT A GLANCE</p>
+                    <h1>Statistics & Analysis</h1>
+                    <p>Understand your job search through your application data.</p>
+                </div>
+            </header>
+
+            <!-- Application status chart -->
+            <section class="statistics-panel">
+                <h2>Application Status Distribution</h2>
+                <p>See how your applications are distributed across each status.</p>
+
+                <div class="chart-container doughnut-container">
+                    <canvas id="statusChart"></canvas>
+                </div>
+
+                <div id="statusAnalysis" class="analysis-message">
+                    Your application analysis will appear here.
+                </div>
+            </section>
+
+            <!-- Applications over time -->
+            <section class="statistics-panel">
+                <h2>Applications Over Time</h2>
+                <p>Track how many applications you submitted each month.</p>
+
+                <div class="chart-container">
+                    <canvas id="timelineChart"></canvas>
+                </div>
+
+                <div id="timelineAnalysis" class="analysis-message"></div>
+            </section>
+
+            <!-- Career insights -->
+            <section class="statistics-panel">
+                <h2>Career Insights</h2>
+                <p>Useful observations calculated from your saved applications.</p>
+
+                <div id="careerInsights" class="insights-list">
+                    <p>Loading your career insights...</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="js/statistics.js"></script>
+</body>
+</html>

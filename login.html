@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | JobTrack</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/login.js" defer></script>
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-layout">
+
+        <!-- Left Side: Login Image -->
+        <section class="auth-visual">
+
+            <img
+                src="assets/loginpage.jpeg"
+                alt="JobTrack login illustration"
+                class="auth-illustration"
+            >
+        </section>
+
+        <!-- Right Side: Login Form -->
+        <section class="auth-form-section">
+
+            <form class="auth-card" id="loginForm">
+
+                <h1>Login to JobTrack</h1>
+
+                <p class="auth-description">
+                    Log in to access your JobTrack dashboard.
+                </p>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+
+                <p id="message"
+                   class="form-message"
+                   aria-live="polite"></p>
+
+                <button type="submit" class="auth-button">
+                    Login
+                </button>
+
+                <p class="auth-switch">
+                    Don't have an account?
+                    <a href="signup.html">Sign Up</a>
+                </p>
+
+                <a href="index.html" class="back-link">
+                    ← Back to Home
+                </a>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

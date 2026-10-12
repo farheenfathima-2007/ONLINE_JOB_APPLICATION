@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack | Interviews & Follow-ups</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/interviews.css">
+
+    <script src="js/auth.js"></script>
+    <script>
+        requireLogin();
+    </script>
+</head>
+
+<body>
+    <div class="interviews-layout">
+
+        <aside class="interviews-sidebar">
+            <div class="interviews-logo">
+                <img src="assets/job track logo.jpeg" alt="JobTrack Logo">
+            </div>
+
+
+            <nav class="interviews-nav">
+                <a href="dashboard.html">🏠 Dashboard</a>
+                <a href="my-application.html">📋 My Applications</a>
+                <a href="interviews.html" class="active">📅 Interviews & Follow-ups</a>
+                <a href="statistics.html">📊 Statistics</a>
+                <a href="profile.html">👤 Profile</a>
+                <a href="admin.html">🛡️ Admin</a>
+            </nav>
+            <div class="sidebar-bottom-image">
+    <img src="assets/sidebar-image.jpeg" alt="JobTrack illustration">
+</div>
+
+            <button id="logoutBtn" class="interviews-logout">Logout</button>
+        </aside>
+
+        <main class="interviews-main">
+
+            <header class="interviews-header">
+                <p class="interviews-eyebrow">STAY PREPARED</p>
+                <h1>Interviews & Follow-ups</h1>
+                <p>Keep track of upcoming interviews and follow-up dates.</p>
+            </header>
+
+        <section class="interviews-banner">
+    <div class="interviews-banner-text">
+        <h2>Every opportunity deserves preparation.</h2>
+        <p>Review your upcoming interviews and follow-ups in one place.</p>
+    </div>
+
+    <img
+        src="assets/interview-followup.jpeg"
+        alt="Job search illustration"
+        class="interviews-banner-image"
+    >
+</section>
+
+            <section class="interviews-section">
+                <div class="interviews-section-heading">
+                    <h2>Upcoming Interviews</h2>
+                    <p>Applications with an interview date.</p>
+                </div>
+
+                <div id="upcomingInterviews" class="interviews-list"></div>
+            </section>
+
+            <section class="interviews-section">
+                <div class="interviews-section-heading">
+                    <h2>Follow-up Reminders</h2>
+                    <p>Applications that need your attention.</p>
+                </div>
+
+                <div id="followUpReminders" class="interviews-list"></div>
+            </section>
+
+            <p id="interviewsMessage" class="interviews-message"></p>
+
+        </main>
+    </div>
+
+    <script src="js/interviews.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | JobTrack</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/signup.js" defer></script>
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-layout">
+
+        <!-- Left Side: Image -->
+        <section class="auth-visual">
+
+            <img
+                src="assets/career-track.jpeg"
+                alt="Job search illustration"
+                class="auth-illustration"
+            >
+
+            <h2>Your Dream Job Starts Here</h2>
+
+            <p>
+                Organize your applications, prepare for interviews,
+                and take the next step in your career.
+            </p>
+        </section>
+
+        <!-- Right Side: Signup Form -->
+        <section class="auth-form-section">
+
+            <form class="auth-card" id="signupForm">
+
+                <h1>Create Your Account</h1>
+
+                <p class="auth-description">
+                    Join JobTrack and organize your job search.
+                </p>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        placeholder="Enter your full name"
+                        minlength="2"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Re-enter your password"
+                        minlength="6"
+                        required
+                    >
+                </div>
+
+                <p id="message"
+                   class="form-message"
+                   aria-live="polite"></p>
+
+                <button type="submit" class="auth-button">
+                    Create Account
+                </button>
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <a href="login.html">Login</a>
+                </p>
+
+                <a href="index.html" class="back-link">
+                    ← Back to Home
+                </a>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobTrack | Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/auth.js"></script>
+<script>
+    requireLogin();
+</script>
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-image">
+                <img src="assets/job track logo.jpeg"
+                     alt="Career tracking illustration">
+            </div>
+
+            <br>
+            <br>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="active">🏠 Dashboard</a>
+                <a href="my-application.html">📋 My Applications</a>
+                <a href="interviews.html">📅 Interviews & Follow-ups</a>
+                <a href="statistics.html">📊 Statistics</a>
+                <a href="profile.html">👤 My Profile</a>
+                <a href="admin.html">🛡️ Admin</a>
+            </nav>
+
+            <div class="sidebar-bottom-image">
+    <img src="assets/sidebar-image.jpeg" alt="JobTrack illustration">
+</div>
+
+            <p class="sidebar-note">
+                Your career journey, organized in one place.
+            </p>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <header class="top-header">
+                <div>
+                    <h2>My Dashboard</h2>
+                    <p>Track your job search progress.</p>
+                </div>
+
+                <div class="header-actions">
+                    <button id="logoutBtn" class="logout-btn">
+                        Logout ↗
+                    </button>
+                </div>
+            </header>
+
+            <!-- Welcome Banner -->
+            <section class="welcome-banner">
+                <div>
+                    <p class="eyebrow">YOUR CAREER, ORGANIZED</p>
+                    <h1>Welcome back! 👋</h1>
+                    <p>
+                        Keep going! Every application brings you
+                        closer to your dream job.
+                    </p>
+                    <a href="add-application.html" class="primary-btn">
+                        + Add Application
+                    </a>
+                </div>
+
+                <img src="assets/dashboard.jpeg"
+                     alt="Job application dashboard illustration">
+            </section>
+
+            <!-- Summary Cards -->
+            <section class="stats-grid">
+
+                <article class="stat-card">
+                    <span class="stat-icon">💼</span>
+                    <p>Total Applications</p>
+                    <h2 id="totalCount">0</h2>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon">📨</span>
+                    <p>Applied</p>
+                    <h2 id="appliedCount">0</h2>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon">🎤</span>
+                    <p>Interviews</p>
+                    <h2 id="interviewCount">0</h2>
+                </article>
+
+                <article class="stat-card">
+                    <span class="stat-icon">🎉</span>
+                    <p>Offers</p>
+                    <h2 id="offerCount">0</h2>
+                </article>
+
+            </section>
+
+            <!-- Recent Applications -->
+            <section class="content-card">
+                <div class="section-heading">
+                    <div>
+                        <h2>Recent Applications</h2>
+                        <p>Your latest job application updates.</p>
+                    </div>
+
+                    <a href="my-application.html">View All →</a>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Position</th>
+                                <th>Applied Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recentApplications">
+                            <tr>
+                                <td colspan="4">
+                                    No applications yet.
+                                    Click Add Application to get started.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Statistics and Reminders -->
+            <section class="bottom-grid">
+
+                <article class="content-card" id="statistics">
+                    <h2>Application Progress</h2>
+                    <p>Check your current job search progress.</p>
+
+                    <div class="progress-item">
+                        <span>Applied</span>
+                        <div class="progress-track">
+                            <div id="appliedProgress"
+                                 class="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <span>Interviews</span>
+                        <div class="progress-track">
+                            <div id="interviewProgress"
+                                 class="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-item">
+                        <span>Offers</span>
+                        <div class="progress-track">
+                            <div id="offerProgress"
+                                 class="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <p>
+                        Offer rate:
+                        <strong id="offerRate">0%</strong>
+                    </p>
+                </article>
+
+                <article class="content-card" id="reminders">
+                    <h2>Upcoming Interviews & Follow-ups</h2>
+                    <p>Remember your next important steps.</p>
+
+                    <div id="reminderList">
+                        <p>No upcoming reminders yet.</p>
+                    </div>
+                </article>
+
+            </section>
+            <br>
+            <footer class="dashboard-footer">
+                JobTrack © 2026 | Organize your career journey.
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

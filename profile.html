@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobTrack | My Profile</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+
+    <script src="js/auth.js"></script>
+    <script>
+        requireLogin();
+    </script>
+</head>
+
+<body>
+
+<div class="profile-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="profile-sidebar">
+
+        <div class="profile-logo">
+            <img src="assets/job track logo.jpeg" alt="JobTrack">
+        </div>
+
+        <p class="profile-nav-heading">WORKSPACE</p>
+
+        <nav class="profile-nav">
+            <a href="dashboard.html">🏠 Dashboard</a>
+            <a href="add-application.html">➕ Add Application</a>
+            <a href="my-application.html">📋 My Applications</a>
+            <a href="interviews.html">📅 Interviews & Follow-ups</a>
+            <a href="statistics.html">📊 Statistics</a>
+            <a href="profile.html" class="active">👤 Profile</a>
+            <a href="admin.html" class="admin-nav-link">🛡️ Admin</a>
+        </nav>
+
+        <div class="sidebar-bottom-image">
+    <img src="assets/sidebar-image.jpeg" alt="JobTrack illustration">
+</div>
+
+        <div class="profile-sidebar-bottom">
+            <p>Keep moving towards your dream career.</p>
+            <button id="profileLogoutBtn" class="profile-logout">
+                ↪ Logout
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="profile-main">
+
+        <!-- TOP BAR -->
+        <header class="profile-topbar">
+            <div>
+                <p class="profile-eyebrow">YOUR PERSONAL SPACE</p>
+                <h1>My Profile</h1>
+                <p class="profile-subtitle">
+                    Your account, your career journey.
+                </p>
+            </div>
+
+            <div class="profile-top-icon">✦</div>
+        </header>
+
+        <!-- HERO BANNER -->
+        <section class="profile-hero">
+
+            <div class="profile-hero-content">
+                <span class="profile-hero-label">YOUR CAREER JOURNEY</span>
+
+                <h2>Every great career<br>starts with a plan.</h2>
+
+                <p>
+                    Keep your details up to date and stay organized
+                    as you work towards your next opportunity.
+                </p>
+            </div>
+
+            <div class="profile-hero-visual">
+                <img
+                    src="assets/profile.jpeg"
+                    alt="JobTrack career planning illustration"
+                >
+            </div>
+
+        </section>
+
+        <!-- PROFILE OVERVIEW -->
+        <section class="profile-overview">
+
+            <div class="profile-identity-card">
+
+                <div class="profile-avatar" id="profileAvatar">
+                    U
+                </div>
+
+                <div class="profile-identity-text">
+                    <span class="profile-small-label">YOUR ACCOUNT</span>
+                    <h2 id="profileDisplayName">Loading profile...</h2>
+                    <p id="profileDisplayEmail"></p>
+                    <span class="profile-member-tag">
+                        ✦ JobTrack Member
+                    </span>
+                </div>
+
+            </div>
+
+            <div class="profile-tip-card">
+                <div class="profile-tip-icon">✧</div>
+                <div>
+                    <h3>Small steps matter</h3>
+                    <p>
+                        Keep your profile accurate so your career
+                        journey stays organized.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ACCOUNT DETAILS -->
+        <section class="profile-details-card">
+
+            <div class="profile-section-heading">
+                <div>
+                    <span class="profile-small-label">PERSONAL INFORMATION</span>
+                    <h2>Account Details</h2>
+                    <p>Update your name and review your registered email.</p>
+                </div>
+
+                <span class="profile-edit-icon">✎</span>
+            </div>
+
+            <form id="profileForm">
+
+                <div class="profile-form-grid">
+
+                    <div class="profile-field">
+                        <label for="profileName">Full Name</label>
+                        <input
+                            type="text"
+                            id="profileName"
+                            name="profileName"
+                            placeholder="Enter your full name"
+                            maxlength="80"
+                            required
+                        >
+                    </div>
+
+                    <div class="profile-field">
+                        <label for="profileEmail">Email Address</label>
+                        <input
+                            type="email"
+                            id="profileEmail"
+                            name="profileEmail"
+                            readonly
+                        >
+                        <small>Your registered email cannot be changed here.</small>
+                    </div>
+
+                </div>
+
+                <div class="profile-form-footer">
+                    <p id="profileMessage"
+                       class="profile-message"
+                       aria-live="polite"></p>
+
+                    <button type="submit" class="profile-save">
+                        Save Changes <span>→</span>
+                    </button>
+                </div>
+
+            </form>
+
+        </section>
+
+        <footer class="profile-footer">
+            Made for your next opportunity. <span>♥</span> JobTrack
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="js/profile.js"></script>
+
+<script>
+    // Show the Admin navigation link only to an admin account.
+    if (typeof updateAdminNavigation === "function") {
+        updateAdminNavigation();
+    }
+
+    // Use the existing logout helper.
+    const profileLogoutBtn = document.getElementById("profileLogoutBtn");
+
+    profileLogoutBtn.addEventListener("click", function () {
+        logoutUser();
+    });
+</script>
+
+</body>
+</html>
